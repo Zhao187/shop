@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -37,6 +38,7 @@ public class LineChartActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        Toast.makeText(this, "你好世界", Toast.LENGTH_SHORT).show();
         chart.getDescription().setEnabled(false);
         chart.setDrawGridBackground(true);
 
