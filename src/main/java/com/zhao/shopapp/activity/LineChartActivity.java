@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -39,6 +40,7 @@ public class LineChartActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        Toast.makeText(this, "添加了一个新功能", Toast.LENGTH_SHORT).show();
         mTf = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
         chart.getDescription().setEnabled(false);
         chart.setDrawGridBackground(true);
