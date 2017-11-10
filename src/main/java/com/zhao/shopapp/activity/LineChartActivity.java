@@ -1,10 +1,10 @@
 package com.zhao.shopapp.activity;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -31,6 +31,7 @@ public class LineChartActivity extends BaseActivity {
     @Bind(R.id.chart)
     LineChart chart;
 
+    private Typeface mTf;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_line_chart;
@@ -38,7 +39,7 @@ public class LineChartActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        Toast.makeText(this, "你好世界", Toast.LENGTH_SHORT).show();
+        mTf = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
         chart.getDescription().setEnabled(false);
         chart.setDrawGridBackground(true);
 
@@ -46,6 +47,7 @@ public class LineChartActivity extends BaseActivity {
         IAxisValueFormatter xAxisFormatter = new MonthAxisValueFormatter();
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setTypeface(mTf);
         xAxis.setDrawGridLines(false);
         xAxis.setDrawAxisLine(true);
         xAxis.setLabelCount(11);
@@ -53,6 +55,7 @@ public class LineChartActivity extends BaseActivity {
 
         //绘制图表的Y轴
         YAxis leftAxis = chart.getAxisLeft();
+        leftAxis.setTypeface(mTf);
         //false:代表值是平均分配的;
         leftAxis.setLabelCount(7, false);
 
